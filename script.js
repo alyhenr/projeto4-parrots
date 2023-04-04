@@ -11,9 +11,14 @@ const gifsCards = [
 
 let qtde = 0;
 let nCards = [];
+let counter = 0;
+
+const finishTheGame = () => {
+  alert(`Você ganhou em ${counter} jogadas!`);
+}
 
 function isTheSameCard(firstChoice, currentOne) {
-  
+  counter++;  
   currentOne.classList.add("rotate-back");
 
   function rotateCardsBack() {
@@ -30,24 +35,36 @@ function isTheSameCard(firstChoice, currentOne) {
     setTimeout(       
       () => rotateCardsBack()     
     , 1000)
-  } else {
-    firstChoice.classList.remove("not-found"); 
-    currentOne.classList.remove("not-found");
+  } else {  
+
+      firstChoice.classList.remove("not-found"); 
+      currentOne.classList.remove("not-found");       
   }
+
+  if (!container.getElementsByClassName("not-found").length) {
+    setTimeout(       
+      () => finishTheGame()     
+    , 700); 
+    }     
   
 };
 
 function rotateCard(card) {
 
   const firstChoice = container.querySelector('.rotate-back.not-found');
+  
+  // Para evitar a possibilidade de se clicar rapidamente em varias cartas:
+  const nSelectedCards = container.getElementsByClassName("rotate-back not-found").length;
+  console.log(container.getElementsByClassName("rotate-back not-found"))
 
   if (firstChoice !== null) {
-    isTheSameCard(firstChoice, card.querySelector('.back-face'));
+    if (nSelectedCards === 1) isTheSameCard(firstChoice, card.querySelector('.back-face'));
 
-  } else {
+  } else {    
     const backFace = card.querySelector(".back-face");    
     
     backFace.classList.add("rotate-back");
+    counter++;
   }
 };
 
