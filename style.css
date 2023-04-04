@@ -32,7 +32,7 @@ header {
 .container { 
     display: flex;
     justify-content: center;
-    align-items: flex-start;
+    align-items: center;
     flex-wrap: wrap;
 
     margin: 20px auto;
@@ -50,6 +50,10 @@ header {
 .card img {
     width: 100px;
     height: 100px;
+}
+
+.card:hover {
+    cursor: pointer;
 }
 
 .face {
@@ -71,11 +75,10 @@ header {
     transform: rotateY(180deg);
 }
 
-.rotate{
+.rotate-back{
     transform: rotateY(0deg);
-    background-color: white !important;
 }
 
-/* .card:hover .front-face {
+.rotate-front {
     transform: rotateY(-180deg);
-} */
+} 
