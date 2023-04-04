@@ -20,10 +20,10 @@ const card = (randomImg) => {
   return `
             <div class="card">
                 <div class="front-face face">
-                Frente
+                    <img src="./Arquivos Úteis - Projeto 04 - Parrot Card Game/back.png" alt="back-img" />
                 </div>
                 <div class="back-face face">
-                    <img src=${randomImg} alt="img" />
+                    <img src="${randomImg}" alt="img" />
                 </div>
             </div>
         `;
@@ -34,10 +34,18 @@ while (qtde < 4 || qtde > 14 || qtde % 2 !== 0) {
 }
 
 for (let i = 0; i < qtde/2; i++) {
+  console.log(gifsCards.sort(comparador)[i]);
   nCards.push(card(gifsCards.sort(comparador)[i]));
 }
-
+console.log(nCards)
 nCards = [...nCards, ...nCards];
 nCards = nCards.sort(comparador);
-
+console.log(nCards)
 container.innerHTML = nCards.join('');
+
+const cardsGame = document.getElementsByClassName("card");
+for (let j = 0; j <  cardsGame.length; j++) {
+    cardsGame[j].addEventListener("click", (ev) => {
+        ev.currentTarget.querySelector('.back-face').classList.add("rotate");        
+    });
+};

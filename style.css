@@ -42,9 +42,14 @@ header {
 }
 
 .card {
-    width: 200px;
-    height: 250px;
+    width: 117px;
+    height: 146px;
     position: relative;
+}
+
+.card img {
+    width: 100px;
+    height: 100px;
 }
 
 .face {
@@ -66,10 +71,11 @@ header {
     transform: rotateY(180deg);
 }
 
-/* .card:hover .back-face {
+.rotate{
     transform: rotateY(0deg);
+    background-color: white !important;
 }
 
-.card:hover .front-face {
+/* .card:hover .front-face {
     transform: rotateY(-180deg);
 } */
