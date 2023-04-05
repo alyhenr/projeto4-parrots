@@ -5,7 +5,7 @@
 body {
     display: flex;
     flex-direction: column;
-    align-items: center;    
+    align-items: center;
 
     background-color: rgba(238, 249, 191, 1);
 }
@@ -14,7 +14,7 @@ header {
     width: 100%;
     height: 63px;
 
-    margin:30px auto;
+    margin: 30px auto;
     text-align: center;
 
     font-family: 'Roboto';
@@ -29,7 +29,7 @@ header {
 
 }
 
-.container { 
+.container {
     display: flex;
     justify-content: center;
     align-items: center;
@@ -75,10 +75,29 @@ header {
     transform: rotateY(180deg);
 }
 
-.rotate-back{
+.rotate-back {
     transform: rotateY(0deg);
 }
 
 .rotate-front {
     transform: rotateY(-180deg);
-} 
+}
+
+.timer {
+    position: fixed;
+    top: 16px;
+    right: 18px;
+
+    width: 46px;
+    height: 47px;
+
+    font-family: 'Roboto';
+    font-style: normal;
+    font-weight: 700;
+    font-size: 36px;
+    line-height: 42px;
+    letter-spacing: -0.004em;
+
+    color: #86BD8D;
+
+}
