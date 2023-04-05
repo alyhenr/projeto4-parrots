@@ -27,9 +27,15 @@ let counter = 0;
 let time = 0;
 
 // Função chamada quando todas as cartas são encontradas:
-const finishTheGame = () => {
-  alert(`Você ganhou em ${counter} jogadas!`);
-  location.reload();
+const finishTheGame = () => {  
+  alert(`Você ganhou em ${counter} jogadas! A duração do jogo foi de ${time} segundos!`);
+
+  let reloadGame = "";
+  
+  while (reloadGame !== "sim" && reloadGame !== "não") {
+    reloadGame = prompt("Gostaria de jogar novamente?");
+    if (reloadGame === "sim") location.reload();
+  };
 };
 
 // Quando uma carta sem par está selecionada, essa função verifica se a proxima carta escolhida
