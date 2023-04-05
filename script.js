@@ -31,9 +31,9 @@ const finishTheGame = () => {
   alert(`Você ganhou em ${counter} jogadas! A duração do jogo foi de ${time} segundos!`);
 
   let reloadGame = "";
-  
+
   while (reloadGame !== "sim" && reloadGame !== "não") {
-    reloadGame = prompt("Gostaria de jogar novamente?");
+    reloadGame = prompt("Você gostaria de reiniciar a partida? (sim ou não)");
     if (reloadGame === "sim") location.reload();
   };
 };
@@ -68,6 +68,7 @@ function isTheSameCard(firstChoice, currentOne) {
 
 // Mostra qual o gif da carta clicada:
 function rotateCard(card) {
+
   // Verifica se já havia uma carta (sem par) selecionada: 
   const firstChoice = container.querySelector(".rotate-back.not-found");  
   const backFace = card.nextElementSibling;
@@ -113,20 +114,6 @@ while (qtde < 4 || qtde > 14 || qtde % 2 !== 0) {
   qtde = prompt("Com quantas cartas você deseja jogar?");
 }
 
-function timerCounter() {
-    time++;
-    timer.innerHTML = time;
-    callback();
-}
-
-function callback() {
-  setTimeout(() => {
-    timerCounter()
-  }, 1000);
-}
-
-callback();
-
 const mixedCards = gifsCards.sort(comparador);
 
 for (let i = 0; i < qtde / 2; i++) {
@@ -137,3 +124,19 @@ nCards = [...nCards, ...nCards];
 nCards = nCards.sort(comparador);
 
 container.innerHTML = nCards.join("");
+timer.innerHTML = 0;
+
+// Começa a contar o tempo:
+function timerCounter() {
+  time++;
+  timer.innerHTML = time;
+  callback();
+}
+
+function callback() {
+  setTimeout(() => {
+    timerCounter()
+  }, 1000);
+}
+
+callback();
