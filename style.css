@@ -5,7 +5,7 @@
 body {
     display: flex;
     flex-direction: column;
-    align-items: center;
+    align-items: center;    
 
     background-color: rgba(238, 249, 191, 1);
 }
@@ -102,7 +102,7 @@ header {
     color: #86BD8D;
 }
 
-@media screen and (max-width: 400px) {
+@media screen and (max-width: 375px) {
     .container {
         display: flex;
         flex-direction: column;
