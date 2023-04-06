@@ -102,6 +102,30 @@ header {
     color: #86BD8D;
 }
 
+.round-counter {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+
+    width: 46px;
+    height: 47px;
+    border: 1px solid black;
+    border-radius: 50%;  
+    
+    font-family: 'Roboto', sans-serif;
+    font-style: normal;
+    font-weight: 700;
+    font-size: 24px;
+    line-height: 42px;
+    letter-spacing: -0.004em;
+
+    color: #86BD8D;
+}
+
 @media screen and (max-width: 375px) {
     .container {
         display: flex;

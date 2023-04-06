@@ -42,11 +42,16 @@ const finishTheGame = () => {
   }
 };
 
+// Renderizando no HTML o número de jogadas:
+function roundCounter(n) {
+  document.querySelector(".round-counter").innerHTML = n + 1;
+}
+
 // Quando uma carta sem par está selecionada, essa função verifica se a proxima carta escolhida
 // é o par desta:
 function isTheSameCard(firstChoice, currentOne) {
   // Atualiza o valor do contador (numero de jogadas):
-  counter++;
+  roundCounter(counter++);
 
   currentOne.classList.add("rotate-back");
 
@@ -94,7 +99,7 @@ function rotateCard(card) {
       isTheSameCard(firstChoice, backFace);
   } else {
     backFace.classList.add("rotate-back");
-    counter++;
+    roundCounter(counter++);
   }
 }
 
