@@ -1,5 +1,10 @@
 * {
     box-sizing: border-box;
+
+    font-family: 'Roboto', sans-serif;
+    font-style: normal;
+    font-weight: 700;
+    letter-spacing: -0.004em;
 }
 
 body {
@@ -26,8 +31,6 @@ header {
     letter-spacing: -0.004em;
 
     color: #75B79E;
-
-
 }
 
 .container {
@@ -92,13 +95,9 @@ header {
     width: 46px;
     height: 47px;
 
-    font-family: 'Roboto', sans-serif;
-    font-style: normal;
-    font-weight: 700;
     font-size: 36px;
     line-height: 42px;
-    letter-spacing: -0.004em;
-
+    
     color: #86BD8D;
 }
 
@@ -115,13 +114,9 @@ header {
     height: 47px;
     border: 1px solid black;
     border-radius: 50%;  
-    
-    font-family: 'Roboto', sans-serif;
-    font-style: normal;
-    font-weight: 700;
+
     font-size: 24px;
     line-height: 42px;
-    letter-spacing: -0.004em;
 
     color: #86BD8D;
 }
@@ -143,5 +138,9 @@ header {
     .timer {
         right: 7px;
         top: 93%;        
+    }
+    .round-counter {
+        bottom: 80px;
+        right: 11px;
     }
 }
